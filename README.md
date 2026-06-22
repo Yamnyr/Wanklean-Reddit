@@ -20,11 +20,11 @@ Nettoie l'interface Reddit : retire les sidebars, centre le contenu, force une s
 
 **Avant** — Reddit avec sidebars, header encombré, 2 colonnes :
 
-![Avant](avant.png)
+![Avant](/images/avant.png)
 
 **Après** — Interface nettoyée, centrée, une seule colonne :
 
-![Après](apres.png)
+![Après](/images/apres.png)
 
 ## Ce que ça fait
 
