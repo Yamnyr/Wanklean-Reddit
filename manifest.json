@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Wanklean Reddit",
+  "description": "Nettoie l'interface Reddit : retire les sidebars, centre le contenu, une seule colonne. Style Wankil Studio.",
+  "version": "1.1.0",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.reddit.com/*"],
+      "css": ["styles.css"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    :root {
+      --banana: #FFE135;
+      --noir: #0D0D0D;
+      --noir-light: #1A1A1A;
+      --gris: #888;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 260px;
+      background: var(--noir);
+      color: #fff;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+    .header {
+      background: var(--banana);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo { font-size: 24px; }
+    .title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--noir);
+      text-transform: uppercase;
+    }
+    .body { padding: 18px; }
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .toggle-label {
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .switch { position: relative; width: 48px; height: 26px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; inset: 0;
+      background: #333;
+      border-radius: 26px;
+      transition: .3s;
+      cursor: pointer;
+      border: 2px solid #444;
+    }
+    .slider::before {
+      content: '';
+      position: absolute;
+      width: 18px; height: 18px;
+      left: 2px; bottom: 2px;
+      background: var(--gris);
+      border-radius: 50%;
+      transition: .3s;
+    }
+    .switch input:checked + .slider {
+      background: var(--banana);
+      border-color: #ccb000;
+    }
+    .switch input:checked + .slider::before {
+      transform: translateX(22px);
+      background: var(--noir);
+    }
+    .status {
+      margin-top: 12px;
+      font-size: 11px;
+      color: var(--gris);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .status span { color: #00E676; font-weight: 700; }
+    .status span.off { color: #FF5252; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="logo">🍌</span>
+    <span class="title">Wanklean Reddit</span>
+  </div>
+  <div class="body">
+    <div class="toggle-row">
+      <span class="toggle-label">Nettoyer Reddit</span>
+      <label class="switch">
+        <input type="checkbox" id="toggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="status">
+      État : <span id="statusText">activé</span>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
